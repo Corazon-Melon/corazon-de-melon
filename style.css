@@ -102,9 +102,11 @@ body {
     box-shadow: 0 12px 28px rgba(245, 130, 32, 0.15);
 }
 
-.menu-card img {
-    height: 220px;
-    object-fit: cover;
+/* Tamaño Homogéneo para Tarjetas de Menú */
+.menu-card-img {
+    height: 240px !important;
+    width: 100% !important;
+    object-fit: cover !important;
 }
 
 .price-tag {
@@ -339,10 +341,11 @@ footer {
     padding-left: 10px;
 }
 
-/* Carrusel del Hero */
+/* Tamaños Homogéneos del Carrusel Principal */
 .hero-carousel-img {
-    height: 380px;
-    object-fit: cover;
+    height: 380px !important;
+    width: 100% !important;
+    object-fit: cover !important;
 }
 
 #heroCarousel .carousel-indicators [data-bs-target] {
