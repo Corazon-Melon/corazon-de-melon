@@ -247,10 +247,7 @@ footer {
     to { opacity: 1; transform: scale(1); }
 }
 
-/* ==========================================
-   LOGO NEÓN ANIMADO
-   ========================================== */
-
+/* Logo Neón Animado */
 .animated-heart-logo {
     overflow: visible !important;
 }
@@ -340,4 +337,18 @@ footer {
     font-size: 1.25rem;
     color: var(--brand-orange);
     padding-left: 10px;
+}
+
+/* Carrusel del Hero */
+.hero-carousel-img {
+    height: 380px;
+    object-fit: cover;
+}
+
+#heroCarousel .carousel-indicators [data-bs-target] {
+    background-color: var(--brand-orange);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
 }
