@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Pacifico&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --bg-main: #fdfaf6;
+    --brand-green: #8bc34a;
+    --brand-orange: #f58220;
+    --brand-dark-orange: #d96f14;
+    --wood-brown: #3e2723;
+    --text-muted: #6e5e54;
+    --card-color: #ffffff;
+    --font-heading: 'Caveat', cursive;
+    --font-body: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-main);
+    color: var(--wood-brown);
+}
+
+/* Tipografía */
+.hero-title, 
+.section-title, 
+.brand-text {
+    font-family: var(--font-heading);
+    color: var(--brand-orange);
+    line-height: 1.1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+}
+
+.section-title {
+    font-size: 3rem;
+}
+
+/* Barra Superior */
+.top-bar-contact {
+    background: var(--brand-green);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(253, 250, 246, 0.95) !important;
+    border-bottom: 3px solid var(--brand-green);
+}
+
+.nav-link {
+    color: var(--wood-brown) !important;
+    font-weight: 600;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--brand-orange) !important;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--brand-orange) !important;
+    border-color: var(--brand-orange) !important;
+    color: #ffffff !important;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--brand-dark-orange) !important;
+    border-color: var(--brand-dark-orange) !important;
+}
+
+.filter-btn {
+    border: 2px solid var(--brand-green);
+    color: var(--wood-brown);
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 6px 20px;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--brand-green);
+    color: #fff;
+}
+
+/* Tarjetas de Menú */
+.menu-card {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 8px 20px rgba(62, 39, 35, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--card-color);
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(245, 130, 32, 0.15);
+}
+
+.menu-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.price-tag {
+    font-weight: 700;
+    color: var(--brand-orange);
+    font-size: 1.25rem;
+}
+
+.badge-custom {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--brand-green);
+    color: #fff;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.rating {
+    color: #f59e0b;
+}
+
+.order-btn {
+    border: 2px solid var(--brand-orange);
+    background: transparent;
+    color: var(--brand-orange);
+    border-radius: 50px;
+    padding: 4px 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    background: var(--brand-orange);
+    color: #fff;
+}
+
+/* Sección de Características */
+.features {
+    padding: 80px 0;
+    background: #f4eae1;
+}
+
+.feature-box {
+    background: var(--card-color);
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #e0d0c1;
+    transition: 0.3s;
+    height: 100%;
+}
+
+.feature-box i {
+    font-size: 40px;
+    color: var(--brand-green);
+    margin-bottom: 20px;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--brand-orange);
+}
+
+/* Contacto */
+.contact-info, .contact-form {
+    background: var(--card-color);
+    border-radius: 20px;
+    border: 1px solid #ebdcd0;
+}
+
+.icon-box {
+    width: 45px;
+    height: 45px;
+    background: rgba(139, 195, 74, 0.15);
+    color: var(--brand-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.custom-input {
+    background: #faf6f0;
+    border: 1px solid #d4c4b5;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.custom-input:focus {
+    background: #fff;
+    border-color: var(--brand-orange);
+    box-shadow: none;
+}
+
+.contact-btn {
+    background: var(--brand-orange);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 700;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background: var(--brand-dark-orange);
+}
+
+.style-link {
+    color: var(--brand-orange);
+}
+
+.style-link:hover {
+    color: var(--brand-dark-orange);
+}
+
+/* Pie de Página */
+footer {
+    background: var(--wood-brown);
+    border-top: 4px solid var(--brand-green);
+}
+
+/* Clases de Filtro Dinámico */
+.menu-item.hide {
+    display: none !important;
+}
+
+.menu-item.show {
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================
+   LOGO NEÓN ANIMADO
+   ========================================== */
+
+.animated-heart-logo {
+    overflow: visible !important;
+}
+
+.logo-animated-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart-shape-draw,
+.heart-sparkle-draw {
+    fill: none;
+    stroke: var(--brand-orange);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.heart-shape-draw {
+    stroke-width: 8.5;
+    stroke-dasharray: 280;
+    stroke-dashoffset: 280;
+    animation: loopDrawHeart 4s cubic-bezier(0.45, 0, 0.15, 1) infinite;
+}
+
+.heart-sparkle-draw {
+    stroke-width: 5.5;
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: loopDrawSparkle 4s cubic-bezier(0.45, 0, 0.15, 1) infinite;
+}
+
+@keyframes loopDrawHeart {
+    0% {
+        stroke-dashoffset: 280;
+        filter: drop-shadow(0 0 2px rgba(245, 130, 32, 0.3));
+        opacity: 0.3;
+    }
+    40%, 80% {
+        stroke-dashoffset: 0;
+        filter: drop-shadow(0 0 8px rgba(245, 130, 32, 0.85));
+        opacity: 1;
+    }
+    95%, 100% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes loopDrawSparkle {
+    0%, 25% {
+        stroke-dashoffset: 120;
+        opacity: 0;
+    }
+    50%, 80% {
+        stroke-dashoffset: 0;
+        filter: drop-shadow(0 0 6px rgba(245, 130, 32, 0.85));
+        opacity: 1;
+    }
+    95%, 100% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+    }
+}
+
+.navbar-brand:hover .heart-shape-draw,
+.navbar-brand:hover .heart-sparkle-draw {
+    stroke: var(--brand-green);
+    filter: drop-shadow(0 0 10px rgba(139, 195, 74, 0.9));
+    transition: stroke 0.3s ease, filter 0.3s ease;
+}
+
+.brand-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.85;
+}
+
+.brand-line-1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.6rem;
+    color: var(--brand-orange);
+}
+
+.brand-line-2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.25rem;
+    color: var(--brand-orange);
+    padding-left: 10px;
+}
