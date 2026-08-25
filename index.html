@@ -69,7 +69,7 @@
                             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
-                            <div class="carousel-inner">
+                        <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="images/nuestro-querido-patio.jpg" class="d-block w-100 hero-carousel-img" alt="Terraza Corazón de Melón">
                             </div>
@@ -80,12 +80,11 @@
                                 <img src="images/pan-frances-y-hot-cakes.jpg" class="d-block w-100 hero-carousel-img" alt="Pan francés con frutos rojos">
                             </div>
                         </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide-prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Anterior</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide-next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Siguiente</span>
                         </button>
@@ -98,29 +97,33 @@
     <section id="menu" class="py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title">Nuestro Menú Original</h2>
+                <h2 class="section-title">Nuestro Menú</h2>
                 <p class="text-muted">Platillos preparados al momento con el sazón de la casa</p>
                 
                 <div class="d-flex justify-content-center gap-2 flex-wrap mt-4" id="category-filters">
                     <button class="btn filter-btn active" data-filter="all">Todos</button>
                     <button class="btn filter-btn" data-filter="desayunos">Desayunos</button>
-                    <button class="btn filter-btn" data-filter="baguettes">Baguettes</button>
-                    <button class="btn filter-btn" data-filter="bebidas">Bebidas & Frappés</button>
+                    <button class="btn filter-btn" data-filter="omelettes">Omelettes</button>
+                    <button class="btn filter-btn" data-filter="sandwiches">Sándwiches</button>
+                    <button class="btn filter-btn" data-filter="envolturas">Envolturas</button>
+                    <button class="btn filter-btn" data-filter="postres">Postres</button>
                 </div>
             </div>
 
             <div class="row g-4" id="menu-items-container">
+                
+                <!-- DESAYUNOS -->
                 <div class="col-md-6 col-lg-4 menu-item desayunos">
                     <div class="menu-card h-100 position-relative">
                         <span class="badge-custom">Especialidad</span>
-                        <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337cc?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Chilaquiles Especiales">
+                        <img src="images/pan-frances-y-hot-cakes.jpg" class="card-img-top menu-card-img" alt="Hot Cakes Especiales">
                         <div class="card-body p-4 d-flex flex-column justify-content-between">
                             <div>
                                 <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h4 class="card-title mb-0">Chilaquiles Especiales</h4>
-                                    <span class="price-tag">$135</span>
+                                    <h4 class="card-title mb-0">Hot Cakes Especiales</h4>
+                                    <span class="price-tag">$120</span>
                                 </div>
-                                <p class="card-text text-muted">Salsa a elegir (Verde, Poblano, Chipotle Habanero o Morita) servidos con Arrachera, Pechuga Empanizada o Chicharrón Norteño.</p>
+                                <p class="card-text text-muted">Mezcla de avena, harina y plátano, cubiertos con trozos de manzana roja bañados en caramelo hecho en casa.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -132,73 +135,15 @@
 
                 <div class="col-md-6 col-lg-4 menu-item desayunos">
                     <div class="menu-card h-100 position-relative">
-                        <span class="badge-custom">Favorito</span>
-                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Molletes Especiales">
+                        <span class="badge-custom">Popular</span>
+                        <img src="images/avocado-toast.jpg" class="card-img-top menu-card-img" alt="Avocado Toast">
                         <div class="card-body p-4 d-flex flex-column justify-content-between">
                             <div>
                                 <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h4 class="card-title mb-0">Molletes con Chilaquiles</h4>
-                                    <span class="price-tag">$168</span>
+                                    <h4 class="card-title mb-0">Avocado Toast</h4>
+                                    <span class="price-tag">$110</span>
                                 </div>
-                                <p class="card-text text-muted">Pan rústico con frijolitos, queso gratinado y coronados con chilaquiles de la casa y tu proteína favorita.</p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                <button class="order-btn">Ordenar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 menu-item baguettes">
-                    <div class="menu-card h-100 position-relative">
-                        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Baguette de Milanesa">
-                        <div class="card-body p-4 d-flex flex-column justify-content-between">
-                            <div>
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h4 class="card-title mb-0">Baguette de Milanesa</h4>
-                                    <span class="price-tag">$122</span>
-                                </div>
-                                <p class="card-text text-muted">Milanesa empanizada de res o pollo, queso gratinado, lechuga italiana, jitomate, cebolla y aguacate.</p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                <button class="order-btn">Ordenar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 menu-item baguettes">
-                    <div class="menu-card h-100 position-relative">
-                        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Baguette Campeón">
-                        <div class="card-body p-4 d-flex flex-column justify-content-between">
-                            <div>
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h4 class="card-title mb-0">Baguette Campeón</h4>
-                                    <span class="price-tag">$137</span>
-                                </div>
-                                <p class="card-text text-muted">Pechuga de pollo a la plancha, tocino crujiente, queso gratinado y vegetales frescos.</p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                <button class="order-btn">Ordenar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 menu-item bebidas">
-                    <div class="menu-card h-100 position-relative">
-                        <span class="badge-custom">Populares</span>
-                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Frappés">
-                        <div class="card-body p-4 d-flex flex-column justify-content-between">
-                            <div>
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h4 class="card-title mb-0">Frappé Especial</h4>
-                                    <span class="price-tag">$75</span>
-                                </div>
-                                <p class="card-text text-muted">Mazapán, Ferrero Rocher, Oreo, Gansito, Kinder Delice o Chocoroles servido con crema batida.</p>
+                                <p class="card-text text-muted">Delicioso huevo cremoso en salsa verde con tomate cherry y pepino sobre pan de hogaza con guacamole. Con puré de papa.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -210,14 +155,231 @@
 
                 <div class="col-md-6 col-lg-4 menu-item desayunos">
                     <div class="menu-card h-100 position-relative">
-                        <img src="https://images.unsplash.com/photo-1562376552-0d160a2f238d?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Waffles Especiales">
+                        <img src="images/desayuno-del-rancho-el.jpg" class="card-img-top menu-card-img" alt="Desayuno del Rancho">
                         <div class="card-body p-4 d-flex flex-column justify-content-between">
                             <div>
                                 <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h4 class="card-title mb-0">Waffles de la Casa</h4>
-                                    <span class="price-tag">$88</span>
+                                    <h4 class="card-title mb-0">Desayuno del Rancho</h4>
+                                    <span class="price-tag">$160</span>
                                 </div>
-                                <p class="card-text text-muted">Crujientes waffles acompañados con fruta fresca de temporada, untable dulce y nieve o crema batida.</p>
+                                <p class="card-text text-muted">Deliciosa carne deshebrada con verdura estilo machaca, acompañada de frijoles de la olla, huevo estrellado y tortillas.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <button class="order-btn">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OMELETTES -->
+                <div class="col-md-6 col-lg-4 menu-item omelettes">
+                    <div class="menu-card h-100 position-relative">
+                        <img src="https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Omelette Campestre">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="card-title mb-0">Omelette Campestre</h4>
+                                    <span class="price-tag">$110</span>
+                                </div>
+                                <p class="card-text text-muted">Relleno de queso mozzarella, cubierto con frijol de olla en crema chipotle y trozos de queso panela con chile morrón asado.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <button class="order-btn">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 menu-item omelettes">
+                    <div class="menu-card h-100 position-relative">
+                        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Omelette Portobello">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="card-title mb-0">Omelette Portobello</h4>
+                                    <span class="price-tag">$130</span>
+                                </div>
+                                <p class="card-text text-muted">Relleno de portobello asado y queso mozzarella, cubierto con salsa de tomate rostizada y hierbas finas. Con frijoles y pan.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <button class="order-btn">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 menu-item omelettes">
+                    <div class="menu-card h-100 position-relative">
+                        <span class="badge-custom">Recomendado</span>
+                        <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Omelette de Camarón">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="card-title mb-0">Omelette Camarón</h4>
+                                    <span class="price-tag">$150</span>
+                                </div>
+                                <p class="card-text text-muted">Relleno de queso mozzarella, cubierto de camarón en chipotle con pimiento morrón, cebolla morada y tomate cherry.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <button class="order-btn">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SANDWICHES -->
+                <div class="col-md-6 col-lg-4 menu-item sandwiches">
+                    <div class="menu-card h-100 position-relative">
+                        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Sándwich Tempranero">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="card-title mb-0">Tempranero</h4>
+                                    <span class="price-tag">$60</span>
+                                </div>
+                                <p class="card-text text-muted">Huevo, jamón, queso amarillo, mix de lechugas, tomate y pepino.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <button class="order-btn">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 menu-item sandwiches">
+                    <div class="menu-card h-100 position-relative">
+                        <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Sándwich Popeye">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="card-title mb-0">Popeye</h4>
+                                    <span class="price-tag">$70</span>
+                                </div>
+                                <p class="card-text text-muted">Huevo con espinaca, queso amarillo, queso panela y aguacate.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <button class="order-btn">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 menu-item sandwiches">
+                    <div class="menu-card h-100 position-relative">
+                        <span class="badge-custom">Clásico</span>
+                        <img src="https://images.unsplash.com/photo-1567234669003-dce7a7a88821?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Club Sándwich">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="card-title mb-0">Club Sandwich</h4>
+                                    <span class="price-tag">$110</span>
+                                </div>
+                                <p class="card-text text-muted">Pan 12 granos, pollo, jamón, queso amarillo, mix de lechugas, tomate, aguacate, alfalfa y pepino con ensalada o puré.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <button class="order-btn">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENVOLTURAS -->
+                <div class="col-md-6 col-lg-4 menu-item envolturas">
+                    <div class="menu-card h-100 position-relative">
+                        <span class="badge-custom">De la casa</span>
+                        <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Envoltura Corazón">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="card-title mb-0">Envoltura Corazón</h4>
+                                    <span class="price-tag">$80</span>
+                                </div>
+                                <p class="card-text text-muted">Tortilla de espinaca, pechuga de pollo, lechugas, espinaca, arándanos, tomate cherry, pimiento morrón y queso panela con nuez caramelo.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <button class="order-btn">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 menu-item envolturas">
+                    <div class="menu-card h-100 position-relative">
+                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Envoltura Italiana">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="card-title mb-0">Envoltura Italiana</h4>
+                                    <span class="price-tag">$85</span>
+                                </div>
+                                <p class="card-text text-muted">Tortilla integral, lechugas, espinaca, tomate cherry, salsa boloñesa, carne molida, champiñones, mozzarella y albahaca.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <button class="order-btn">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 menu-item envolturas">
+                    <div class="menu-card h-100 position-relative">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Envoltura de Arrachera">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="card-title mb-0">Envoltura Arrachera</h4>
+                                    <span class="price-tag">$90</span>
+                                </div>
+                                <p class="card-text text-muted">Tortilla de espinaca, mix de lechugas, espinaca, tomate, cebolla morada, guacamole y carne de arrachera.</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <button class="order-btn">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POSTRES -->
+                <div class="col-md-6 col-lg-4 menu-item postres">
+                    <div class="menu-card h-100 position-relative">
+                        <span class="badge-custom">Dulce</span>
+                        <img src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Crepa Frutos del Bosque">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="card-title mb-0">Frutos del Bosque</h4>
+                                    <span class="price-tag">$85</span>
+                                </div>
+                                <p class="card-text text-muted">Crepa artesanal con queso Philadelphia, mermelada de zarzamora y salsa de frutos del bosque (fresa, frambuesa, moras y zarzamoras).</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <button class="order-btn">Ordenar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 menu-item postres">
+                    <div class="menu-card h-100 position-relative">
+                        <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" class="card-img-top menu-card-img" alt="Crepa Dulce">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="card-title mb-0">Crepa Dulce</h4>
+                                    <span class="price-tag">$80</span>
+                                </div>
+                                <p class="card-text text-muted">Crepa clásica preparada con plátano, nutella cremosita y nuez caramelizada crujiente.</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -271,7 +433,7 @@
                                 <div>
                                     <h6 class="mb-1 fw-bold">Ubicación</h6>
                                     <p class="text-muted mb-1">Ensenada, Baja California</p>
-                                    <a href="https://maps.app.goo.gl/At1JgtWYPEqtiuiN7" target="_blank" class="text-decoration-none fw-semibold style-link">
+                                    <a href="https://maps.app.goo.gl/bSr3vY5t91y2sKcL9" target="_blank" class="text-decoration-none fw-semibold style-link">
                                         Abrir en Google Maps <i class="fa-solid fa-arrow-up-right-from-square ms-1 small"></i>
                                     </a>
                                 </div>
@@ -287,7 +449,7 @@
                                 <div class="icon-box"><i class="fa-solid fa-clock"></i></div>
                                 <div>
                                     <h6 class="mb-1 fw-bold">Horario</h6>
-                                    <p class="text-muted mb-0">Lunes a Domingo: 8:00 AM - 4:00 PM</p>
+                                    <p class="text-muted mb-0">Lunes a Domingo: 7:30 AM - 1:00 PM</p>
                                 </div>
                             </div>
                         </div>
@@ -355,17 +517,15 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Inicializar Carrusel en Auto-Play Continuo
             const carouselElement = document.querySelector('#heroCarousel');
             if (carouselElement) {
                 new bootstrap.Carousel(carouselElement, {
                     interval: 3000,
                     ride: 'carousel',
-                    pause: false // Continúa girando incluso si pasas el ratón encima
+                    pause: false
                 });
             }
 
-            // Filtrado de Menú
             const filterButtons = document.querySelectorAll('.filter-btn');
             const menuItems = document.querySelectorAll('.menu-item');
 
@@ -378,22 +538,19 @@
 
                     menuItems.forEach(item => {
                         if (filterValue === 'all' || item.classList.contains(filterValue)) {
-                            item.classList.remove('hide');
-                            item.classList.add('show');
+                            item.style.display = 'block';
                         } else {
-                            item.classList.remove('show');
-                            item.classList.add('hide');
+                            item.style.display = 'none';
                         }
                     });
                 });
             });
 
-            // Enviar Formulario de Reserva por WhatsApp
             const resForm = document.getElementById('reservation-form');
             resForm.addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                const phone = "526462408127";
+                const phone = "526462480774";
                 const nombre = document.getElementById('nombre').value;
                 const telefono = document.getElementById('telefono').value;
                 const email = document.getElementById('email').value;
