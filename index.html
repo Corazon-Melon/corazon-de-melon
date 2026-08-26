@@ -505,6 +505,38 @@
         </div>
     </section>
 
+    <!-- Botón flotante del carrito -->
+    <button id="cart-fab" class="cart-fab" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span id="cart-count" class="cart-count d-none">0</span>
+    </button>
+
+    <!-- Panel del carrito -->
+    <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="cartOffcanvasLabel"><i class="fa-solid fa-basket-shopping me-2"></i>Tu Pedido</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="cart-empty" class="text-center text-muted my-5">
+                <i class="fa-solid fa-basket-shopping fa-2x mb-3 d-block"></i>
+                Aún no has agregado nada.<br>Explora el menú y dale "Ordenar" a lo que se te antoje.
+            </div>
+            <div id="cart-items" class="flex-grow-1"></div>
+            <div id="cart-summary" class="d-none">
+                <hr>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="fw-bold fs-5">Total</span>
+                    <span id="cart-total" class="fw-bold fs-5 price-tag">$0</span>
+                </div>
+                <textarea id="cart-notas" class="form-control custom-input mb-3" rows="2" placeholder="Notas del pedido (para llevar, alergias, etc.)"></textarea>
+                <button id="cart-whatsapp-btn" class="contact-btn">
+                    <i class="fa-brands fa-whatsapp me-2"></i>Enviar Pedido por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
     <footer class="py-4 text-center">
         <div class="container">
             <h4 class="brand-text text-white mb-2">Corazón de Melón</h4>
@@ -570,6 +602,146 @@
 
                 window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
             });
+
+            /* ===== CARRITO DE PEDIDOS ===== */
+            const WHATSAPP_PHONE = "526462480774";
+            const CART_STORAGE_KEY = "cdm-cart";
+
+            let cart = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || "[]");
+
+            const cartFab = document.getElementById('cart-fab');
+            const cartCountEl = document.getElementById('cart-count');
+            const cartItemsEl = document.getElementById('cart-items');
+            const cartEmptyEl = document.getElementById('cart-empty');
+            const cartSummaryEl = document.getElementById('cart-summary');
+            const cartTotalEl = document.getElementById('cart-total');
+            const cartWhatsappBtn = document.getElementById('cart-whatsapp-btn');
+            const cartNotasEl = document.getElementById('cart-notas');
+
+            function saveCart() {
+                localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+            }
+
+            function addToCart(name, price) {
+                const existing = cart.find(i => i.name === name);
+                if (existing) {
+                    existing.qty += 1;
+                } else {
+                    cart.push({ name, price, qty: 1 });
+                }
+                saveCart();
+                renderCart();
+                cartFab.classList.add('bump');
+                setTimeout(() => cartFab.classList.remove('bump'), 350);
+            }
+
+            function changeQty(name, delta) {
+                const item = cart.find(i => i.name === name);
+                if (!item) return;
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.name !== name);
+                }
+                saveCart();
+                renderCart();
+            }
+
+            function removeFromCart(name) {
+                cart = cart.filter(i => i.name !== name);
+                saveCart();
+                renderCart();
+            }
+
+            function renderCart() {
+                const totalItems = cart.reduce((sum, i) => sum + i.qty, 0);
+
+                if (totalItems > 0) {
+                    cartCountEl.textContent = totalItems;
+                    cartCountEl.classList.remove('d-none');
+                } else {
+                    cartCountEl.classList.add('d-none');
+                }
+
+                if (cart.length === 0) {
+                    cartEmptyEl.classList.remove('d-none');
+                    cartItemsEl.innerHTML = '';
+                    cartSummaryEl.classList.add('d-none');
+                    return;
+                }
+
+                cartEmptyEl.classList.add('d-none');
+                cartSummaryEl.classList.remove('d-none');
+
+                let total = 0;
+                cartItemsEl.innerHTML = cart.map(item => {
+                    const subtotal = item.price * item.qty;
+                    total += subtotal;
+                    return `
+                        <div class="cart-item d-flex align-items-center gap-3 py-3">
+                            <div class="flex-grow-1">
+                                <div class="fw-bold">${item.name}</div>
+                                <div class="text-muted small">$${item.price} c/u</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 qty-control">
+                                <button type="button" class="qty-btn" data-action="dec" data-name="${item.name}">−</button>
+                                <span class="fw-bold">${item.qty}</span>
+                                <button type="button" class="qty-btn" data-action="inc" data-name="${item.name}">+</button>
+                            </div>
+                            <div class="fw-bold price-tag" style="min-width:60px; text-align:right;">$${subtotal}</div>
+                            <button type="button" class="cart-remove-btn" data-name="${item.name}" aria-label="Quitar">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>`;
+                }).join('<hr class="my-0">');
+
+                cartTotalEl.textContent = `$${total}`;
+            }
+
+            // Delegación: agregar al carrito desde cualquier botón "Ordenar" del menú
+            document.getElementById('menu-items-container').addEventListener('click', (e) => {
+                const btn = e.target.closest('.order-btn');
+                if (!btn) return;
+                const card = btn.closest('.menu-card');
+                const name = card.querySelector('.card-title').textContent.trim();
+                const priceText = card.querySelector('.price-tag').textContent.trim();
+                const price = parseInt(priceText.replace(/\D/g, ''), 10);
+                addToCart(name, price);
+            });
+
+            // Delegación: cambiar cantidad o quitar producto dentro del carrito
+            cartItemsEl.addEventListener('click', (e) => {
+                const qtyBtn = e.target.closest('.qty-btn');
+                if (qtyBtn) {
+                    const delta = qtyBtn.dataset.action === 'inc' ? 1 : -1;
+                    changeQty(qtyBtn.dataset.name, delta);
+                    return;
+                }
+                const removeBtn = e.target.closest('.cart-remove-btn');
+                if (removeBtn) {
+                    removeFromCart(removeBtn.dataset.name);
+                }
+            });
+
+            // Enviar pedido por WhatsApp
+            cartWhatsappBtn.addEventListener('click', () => {
+                if (cart.length === 0) return;
+
+                let total = 0;
+                let text = `*Nuevo Pedido - Corazón de Melón*%0A%0A`;
+                cart.forEach(item => {
+                    const subtotal = item.price * item.qty;
+                    total += subtotal;
+                    text += `▫️ ${item.qty}x ${item.name} - $${subtotal}%0A`;
+                });
+                text += `%0A💰 *Total: $${total}*%0A`;
+
+                const notas = cartNotasEl.value.trim();
+                if (notas) text += `📝 *Notas:* ${notas}%0A`;
+
+                window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${text}`, '_blank');
+            });
+
+            renderCart();
         });
     </script>
 </body>
